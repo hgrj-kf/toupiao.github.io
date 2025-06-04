@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>小提琴比赛投票</title>
+    <style>
+        /* 基础全屏样式 [1,3](@ref) */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 隐藏滚动条 */
+        }
+        
+        /* 容器样式 */
+        #fullscreen-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        /* 自适应iframe [3,6](@ref) */
+        #embedded-frame {
+            width: 100%;
+            height: 100%;
+            border: none; /* 无边框 */
+            display: block;
+        }
+        
+        /* 响应式优化 [1](@ref) */
+        @media (max-width: 768px) {
+            #embedded-frame {
+                min-height: 100vh; /* 移动端高度优化 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fullscreen-container">
+        <!-- 嵌入目标链接 -->
+        <iframe 
+            id="embedded-frame"
+            src="https://zcytao.work/" 
+            title="嵌入式全屏页面"
+            allowfullscreen <!-- 允许全屏功能 [7](@ref) -->
+            loading="lazy" <!-- 延迟加载优化 [6](@ref) -->
+        ></iframe>
+    </div>
+</body>
+</html>
